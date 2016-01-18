@@ -9,6 +9,7 @@ OSM will be accessible by pointing the host browser to http://localhost:8888
 To be able to execute this manifest, you'll need to install in your host:
 
 [Vagrant](http://www.vagrantup.com)
+
 [Virtualbox](http://www.virtualbox.org)
 
 ## Execution instructions
