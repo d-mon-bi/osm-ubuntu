@@ -24,6 +24,13 @@ config.vm.network "forwarded_port", host_ip: 127.0.0.1,  guest: 8888, host: 8888
 vagrant up --provider virtualbox
 ```
 
+This will bring up the Vagrant box, running under VirtualBox. You should then be able to ssh to the box by running:
+
+```
+vagrant ssh
+```
+	
+
 ### If running under Windows
 Since windows does not include an SSH client (As of 1/18/2016... Microsoft plans on including an ssh client in a future version), you'll need to also install putty (www.putty.org) or another ssh client. An ssh client is included with github desktop for windows.
 
