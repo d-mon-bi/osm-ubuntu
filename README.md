@@ -104,4 +104,18 @@ export PUPPET_REPO=<locationOfThePuppetRepo>
 ```
 sudo puppet apply --modulepath=$PUPPET_REPO/modules $PUPPET_REPO/init.pp
 ```
+#### Bring up the rails server
+This script will download and install the osm server to whatever location you run it from. Usually, unless you navigate out of the folder, this will be /home/vagrant/
 ```
+
+## TODO list
+* Install RVM
+RVM was causing an issue with the OSM dependencies. Need to investigate further
+* Move OSM to a standard location
+Currently, it installs in /home/vagrant/. Another location, such as /var/www would be more appropriate
+* Validate if OSM is already installed/completed
+Currently, if you rerun manifest, OSM will be reinstalled, every time
+* Host OSM as a daemon
+Currently, OSM needs to be started by executing bundle exec rails server. This should be hosted automatically as a daemon.
+
+
