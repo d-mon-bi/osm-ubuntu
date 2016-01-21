@@ -64,9 +64,9 @@ git clone https://github.com/d-mon-bi/osm-ubuntu
 
 This will copy all necessary files to the shared folder, and will be visible within the vagrant box.
 
-#### b. Clone the repository within the vm box. (Not preffered)
+#### b. Clone the repository within the vm box. (Not prefered)
 
-You can also clone the repo itself within the vagrant box. This is not prefferred, as git is not installed on the vagrant box, and would require you to manually install it first. The puppet manifest will install git as part of the installation. If you preffer to go this route:
+You can also clone the repo itself within the vagrant box. This is not preferred, as git is not installed on the vagrant box, and would require you to manually install it first. The puppet manifest will install git as part of the installation. If you prefer to go this route:
 
 1. ssh into the vagrant box
 2. Run:
@@ -106,7 +106,7 @@ sudo puppet apply --modulepath=$PUPPET_REPO/modules $PUPPET_REPO/init.pp
 ```
 #### Bring up the rails server
 
-This script will download and install the osm server to whatever location you run it from. Usually, unless you navigate out of the folder, this will be /home/vagrant/
+This script will download and install the osm server on /home/vagrant/openstreetmap-website/. Navigate to the folder and execute
 
 ```
 bundle exec rails server
