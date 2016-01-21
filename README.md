@@ -105,7 +105,11 @@ export PUPPET_REPO=<locationOfThePuppetRepo>
 sudo puppet apply --modulepath=$PUPPET_REPO/modules $PUPPET_REPO/init.pp
 ```
 #### Bring up the rails server
+
 This script will download and install the osm server to whatever location you run it from. Usually, unless you navigate out of the folder, this will be /home/vagrant/
+
+```
+bundle exec rails server
 ```
 
 ## TODO list
