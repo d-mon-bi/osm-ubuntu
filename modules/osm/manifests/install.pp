@@ -26,5 +26,6 @@ bundle exec rake db:migrate'
 	path        => '/usr/bin:/usr/sbin:/bin',
     command		=> "${as_vagrant} '/home/vagrant/install.sh'",
 	require 	=> File['/home/vagrant/install.sh'],
+	timeout 	=>  3600,
   }
 }
