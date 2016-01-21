@@ -6,7 +6,8 @@ class osm::localhostproxy{
         location / {
                 proxy_pass http://127.0.0.1:3000;
         }
-}"
+}
+"
 
 	file { '/etc/nginx/sites-available/nginx_vhost':
 		content => "$proxycfg",
