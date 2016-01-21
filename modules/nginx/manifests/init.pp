@@ -1,4 +1,4 @@
-class nginx {
+	class nginx {
   package { 'apache2.2-common':
     ensure => absent,
   }
@@ -18,6 +18,9 @@ class nginx {
     ensure => "directory",
     require => Package['nginx'],
   }
+  class { 'osm::localhostproxy':
+		require => Package['nginx'] }
+	
   service { 'nginx':
     ensure => running,
     require => Package['nginx'],
