@@ -3,7 +3,7 @@ class osm::install{
 
   file { '/home/vagrant/install.sh':
 	source => "puppet:///modules/osm/files/install.sh",
-	mode => 700,
+	mode => '700',
   }
   
   exec { 'install-osm':
