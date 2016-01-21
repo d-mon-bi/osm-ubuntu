@@ -6,9 +6,7 @@ cd openstreetmap-website
 bundle install
 cp config/example.application.yml config/application.yml
 cp config/example.database.yml config/database.yml
-sudo -u postgres -i
-createuser -s <username>
-exit
+sudo -u postgres -H bash -l -c \'createuser -s vagrant\'
 bundle exec rake db:create
 psql -d openstreetmap -c "CREATE EXTENSION btree_gist"
 cd db/functions
@@ -21,7 +19,7 @@ bundle exec rake db:migrate'
 
   file { '/home/vagrant/install.sh':
 	content => "$install_sh",
-	mode => '700',
+	mode => '777',
   }
   
   exec { 'install-osm':
