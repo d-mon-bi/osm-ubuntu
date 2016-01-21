@@ -80,7 +80,7 @@ git clone https://github.com/d-mon-bi/osm-ubuntu
 
 #### Give the vagrant user permissions
 Since puppet will be run manually, and not using the puppet agent, it will be executed with the vagrant user, which belongs to the vagrant group. Therefore, this group must be exempted from path and pwd requirements. To do so: 
-`. Run:
+1. Run:
 
 ```
 sudo visudo
@@ -91,7 +91,7 @@ sudo visudo
 Defaults	exempt_group=vagrant
 ```
 
-3. Close and safe the file.
+3. Close and save the file.
 
 #### Set the environment variable for the puppet manifest location
 For simplicity's sake, create an environment variable that points to the location where the puppet repo was cloned to, either the host shared folder or the cloned location.

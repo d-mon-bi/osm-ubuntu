@@ -2,8 +2,8 @@ class osm::install{
   $as_vagrant = 'sudo -u vagrant -H bash -l -c'
   $install_sh = '#!/bin/bash
 sudo gem2.0 install bundler
-git clone --depth=1 https://github.com/openstreetmap/openstreetmap-website.git
-cd openstreetmap-website
+git clone --depth=1 https://github.com/openstreetmap/openstreetmap-website.git /home/vagrant/openstreetmap-website
+cd /home/vagrant/openstreetmap-website
 bundle install
 cp config/example.application.yml config/application.yml
 cp config/example.database.yml config/database.yml
