@@ -10,6 +10,6 @@ class osm {
 
 	include nginx
 	#RVM having issues with some gems, tring without include rvm
-	class { 'osm::localhostproxy':
-		require => Class['nginx'] }
+	class { 'osm::install':
+		require => Class['osm::dependencies']}
 }
