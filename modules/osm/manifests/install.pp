@@ -1,6 +1,6 @@
 class osm::install{
   $as_vagrant = 'sudo -u vagrant -H bash -l -c'
-  $install_sh = "#!/bin/bash
+  $install_sh = '#!/bin/bash
 git clone --depth=1 https://github.com/openstreetmap/openstreetmap-website.git
 cd openstreetmap-website
 bundle install
@@ -14,11 +14,10 @@ psql -d openstreetmap -c "CREATE EXTENSION btree_gist"
 cd db/functions
 make libpgosm.so
 cd ../..
-psql -d openstreetmap -c "CREATE FUNCTION maptile_for_point(int8, int8, int4) RETURNS int4 AS '`pwd`/db/functions/libpgosm', 'maptile_for_point' LANGUAGE C STRICT"
-psql -d openstreetmap -c "CREATE FUNCTION tile_for_point(int4, int4) RETURNS int8 AS '`pwd`/db/functions/libpgosm', 'tile_for_point' LANGUAGE C STRICT"
-psql -d openstreetmap -c "CREATE FUNCTION xid_to_int4(xid) RETURNS int4 AS '`pwd`/db/functions/libpgosm', 'xid_to_int4' LANGUAGE C STRICT"
-bundle exec rake db:migrate
-"
+psql -d openstreetmap -c "CREATE FUNCTION maptile_for_point(int8, int8, int4) RETURNS int4 AS \'`pwd`/db/functions/libpgosm\', \'maptile_for_point\' LANGUAGE C STRICT"
+psql -d openstreetmap -c "CREATE FUNCTION tile_for_point(int4, int4) RETURNS int8 AS \'`pwd`/db/functions/libpgosm\', \'tile_for_point\' LANGUAGE C STRICT"
+psql -d openstreetmap -c "CREATE FUNCTION xid_to_int4(xid) RETURNS int4 AS \'`pwd`/db/functions/libpgosm\', \'xid_to_int4\' LANGUAGE C STRICT"
+bundle exec rake db:migrate'
 
   file { '/home/vagrant/install.sh':
 	content => "$install_sh",
