@@ -8,18 +8,19 @@ class nginx {
     require => Package['apache2.2-common'],
   }
 
+  file { '/etc/nginx/sites-enabled/default':
+    ensure => absent,
+  }
+  file { '/etc/nginx/sites-available/default':
+    ensure => absent,
+  }
+  file { '/var/www':
+    ensure => "directory",
+    require => Package['nginx'],
+  }
   service { 'nginx':
     ensure => running,
     require => Package['nginx'],
     enable => true,
-  }
-
-  file { '/etc/nginx/sites-enabled/default':
-    ensure => absent,
-  }
-
-  file { '/var/www':
-    ensure => "directory",
-    require => Package['nginx'],
   }
 }
