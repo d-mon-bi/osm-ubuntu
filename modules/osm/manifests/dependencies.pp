@@ -1,4 +1,6 @@
 class osm::dependencies {
+  $as_vagrant = 'sudo -u vagrant -H bash -l -c'
+
   package { 'ruby2.0':
     ensure => installed,
   }
@@ -50,4 +52,10 @@ class osm::dependencies {
   package { 'imagemagick':
     ensure => installed,
   }
+ exec { "${as_vagrant} 'gem2.0 install bundler --no-rdoc --no-ri'":
+  creates => "${home}/.rvm/bin/bundle",
+  path        => '/usr/bin:/usr/sbin:/bin',
+  require => Package['ruby2.0']
+ } 
+	
 }
