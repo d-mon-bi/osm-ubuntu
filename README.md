@@ -114,7 +114,7 @@ bundle exec rails server
 
 ## TODO list
 * Install RVM
-RVM was causing an issue with the OSM dependencies. Need to investigate further
+RVM is still causing an issue with the OSM dependencies. Need to investigate further
 * Move OSM to a standard location
 Currently, it installs in /home/vagrant/. Another location, such as /var/www would be more appropriate
 * Validate if OSM is already installed/completed
